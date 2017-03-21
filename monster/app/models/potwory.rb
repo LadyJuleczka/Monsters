@@ -1,0 +1,2 @@
+class Potwory < ApplicationRecord
+end

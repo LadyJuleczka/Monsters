@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista Potworow!</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Nazwa</th>
+      <th>Opis</th>
+      <th>Wiek</th>
+      <th>Wrazliwosc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @potwories.each_with_index do |potwory, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= potwory.nazwa %></td>
+        <td><%= potwory.opis %></td>
+        <td><%= potwory.wiek %></td>
+        <td><%= potwory.wrazliwosc %></td>
+        <td><%= link_to 'Show', potwory %></td>
+        <td><%= link_to 'Edit', edit_potwory_path(potwory) %></td>
+        <td><%= link_to 'Destroy', potwory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Potwory', new_potwory_path %>
